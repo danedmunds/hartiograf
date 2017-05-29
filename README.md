@@ -1,2 +1,2 @@
 # hartiograf
-Wedding website for my friend
+Wedding website for my friends
