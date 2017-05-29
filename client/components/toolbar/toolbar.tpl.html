@@ -1,0 +1,108 @@
+<md-toolbar>
+  <div class="md-toolbar-tools">
+    <h2>
+      <i class="material-icons">favorite_border</i>
+      <i class="material-icons">show_chart</i>
+    </h2>
+    <span style="font-family: 'Pacifico', cursive;" class="md-title">
+      &nbsp;HartioGraf
+      <!-- <div ng-if="!!breadcrumb">{{breadcrumb}}</div> -->
+    </span>
+
+    <span flex></span>
+
+    <!-- Drop down menu for mobile -->
+    <md-menu
+      ng-if="mobileDisplay">
+      <md-button class="menu" ng-click="$mdMenu.open($event)">
+        <md-icon><i class="material-icons">menu</i></md-icon>
+      </md-button>
+      <md-menu-content width="4">
+        <md-menu-item>
+          <md-button
+            aria-label="Home"
+            ui-sref="home">
+            Home
+          </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button
+            aria-label="Venue"
+            ui-sref="venue">
+            Venue
+          </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button
+            aria-label="Accommodations"
+            ui-sref="accommodations">
+            Accommodations
+          </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button
+            aria-label="Shuttle"
+            ui-sref="shuttle">
+            Shuttle
+          </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button
+            aria-label="Wedding Party"
+            ui-sref="wedding-party">
+            Wedding Party
+          </md-button>
+        </md-menu-item>
+        <md-menu-item
+          ng-if="isAuthenticated">
+          <md-button
+            aria-label="RSVP"
+            ui-sref="rsvp">
+            RSVP
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+
+    <!-- Horizontal menu for desktop -->
+    <span
+      ng-if="!mobileDisplay">
+      <md-button
+        aria-label="Home"
+        ui-sref="home">
+        Home
+      </md-button>
+      <md-button
+        ng-class="{'true':'md-primary md-hue-3','false':''}[breadcrumb === 'Venue']"
+        aria-label="Venue"
+        ui-sref="venue">
+        Venue
+      </md-button>
+      <md-button
+        ng-class="{'true':'md-primary md-hue-3','false':''}[breadcrumb === 'Accommodations']"
+        aria-label="Accommodations"
+        ui-sref="accommodations">
+        Accommodations
+      </md-button>
+      <md-button
+        ng-class="{'true':'md-primary md-hue-3','false':''}[breadcrumb === 'Shuttle']"
+        aria-label="Shuttle"
+        ui-sref="shuttle">
+        Shuttle
+      </md-button>
+      <md-button
+        ng-class="{'true':'md-primary md-hue-3','false':''}[breadcrumb === 'Wedding Party']"
+        aria-label="Wedding Party"
+        ui-sref="wedding-party">
+        Wedding Party
+      </md-button>
+      <md-button
+        ng-class="{'true':'md-primary md-hue-3','false':''}[breadcrumb === 'RSVP']"
+        aria-label="RSVP"
+        ui-sref="rsvp"
+        ng-if="isAuthenticated">
+        RSVP
+      </md-button>
+    </span>
+  </div>
+</md-toolbar>

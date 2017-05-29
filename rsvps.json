@@ -1,0 +1,36 @@
+{
+  "guests": [
+    {
+      "name": "Dan Edmunds",
+      "coming": true,
+      "shuttle": true
+    },
+    {
+      "name": "Amanda Edmunds",
+      "coming": false,
+      "diet": "I only eat the finest caviar"
+    }
+  ],
+  "songs": [
+    "Eiffle 88 - I'm Blue",
+    "The Offspring - Bad Habit"
+  ],
+  "comments": "We're happy for you guys!!"
+}
+{
+  "guests": [
+    {
+      "name": "Sonya Jenkins"
+    },
+    {
+      "name": "Mark"
+    }
+  ]
+}
+{
+  "guests": [
+    {
+      "name": "Dan Trudeau"
+    }
+  ]
+}

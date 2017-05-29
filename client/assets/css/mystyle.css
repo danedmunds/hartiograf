@@ -1,0 +1,20 @@
+.mainPanel {
+
+}
+
+@media only screen and (min-width: 900px) {
+    /* For desktop: */
+    .mainPanel {
+      width: 900px;
+      margin: auto;
+    }
+}
+
+.weddingPartyPhoto {
+  width: 150px;
+  height: 150px;
+  float: left;
+  margin-right:2rem;
+  -webkit-shape-outside:circle();
+  shape-outside:circle();
+}

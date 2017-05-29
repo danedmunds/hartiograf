@@ -1,0 +1,20 @@
+version: "2"
+
+services:
+  streams-service:
+    image: danedmunds/hartiograf:latest
+    restart: on-failure
+    environment:
+      - CONNECTIONSTRING=mongodb://mongo:27017/hartiograf
+      - PORT=3000
+      - SECRET=secret
+    ports:
+      - "80:3000"
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:3.2
+    container_name: mongo
+    command: --smallfiles
+    ports:
+      - "27017:27017"

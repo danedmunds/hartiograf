@@ -1,0 +1,48 @@
+<md-content>
+  <div ng-repeat="guest in rsvp.data.guests">
+    <md-card>
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">{{guest.name}}</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-content>
+        <md-switch
+          class="md-primary"
+          ng-model="guest.coming">
+          {{ guest.coming ? 'Attending' : 'Not Attending' }}
+        </md-switch>
+        <md-switch
+          ng-if="guest.coming"
+          class="md-primary"
+          ng-model="guest.shuttle">
+          {{ guest.shuttle ? 'Using Shuttle' : 'Not Using Shuttle' }}
+        </md-switch>
+        <md-input-container ng-if="guest.coming" class="md-block">
+          <label>Dietary Restrictions</label>
+          <textarea ng-model="guest.diet" md-maxlength="150" rows="2" md-select-on-focus></textarea>
+        </md-input-container>
+      </md-card-content>
+    </md-card>
+  </div>
+  <md-card>
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">More Information</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+      <span class="md-caption">Music Requests</span>
+      <md-chips
+        ng-model="rsvp.data.songs"
+        placeholder="Enter a song"
+        secondary-placeholder="+Song">
+      </md-chips>
+      <md-input-container class="md-block">
+        <label>Comments</label>
+        <textarea ng-model="rsvp.data.comments" md-maxlength="150" rows="4" md-select-on-focus></textarea>
+      </md-input-container>
+      <md-button class="md-raised md-primary" ng-click="rsvp.submitRsvp()">Submit</md-button>
+    </md-card-content>
+  </md-card>
+</md-content>

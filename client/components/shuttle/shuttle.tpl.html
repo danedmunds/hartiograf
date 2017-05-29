@@ -1,0 +1,53 @@
+<md-content>
+  <div layout="column">
+    <md-card>
+      <img ng-src="assets/images/bus.png" class="md-card-image"></img>
+    </md-card>
+    <div layout="row" layout-xs="column">
+      <md-card flex>
+        <!-- For some reason using md-card-title aligns the content to the bottom of the card -->
+        <!-- <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Shuttle</span>
+          </md-card-title-text>
+        </md-card-title> -->
+        <md-card-content>
+          <span class="md-headline">Shuttle</span>
+          <p>
+            A shuttle will be provided from Sprucewood Shores Estate Winery to Days Inn in Leamington.
+            An announcement will be made 15 minutes before it departs.
+          </p>
+          <span class="md-headline">Schedule</span>
+          <md-list flex>
+            <md-list-item class="md-2-line">
+              <i class="md-avatar material-icons">directions_bus</i>
+              <div class="md-list-item-text">
+                <h3>10:00 PM Departure</h3>
+                <h3>10:40 PM Arrival</h3>
+              </div>
+            </md-list-item>
+            <md-divider ></md-divider>
+            <md-list-item class="md-2-line">
+              <i class="md-avatar material-icons">directions_bus</i>
+              <div class="md-list-item-text">
+                <h3>1:00 AM Departure</h3>
+                <h3>1:40 AM Arrival</h3>
+              </div>
+            </md-list-item>
+          </md-list>
+        </md-card-content>
+      </md-card>
+      <md-card flex>
+        <md-card-content>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d189585.48148508498!2d-82.94224144634613!3d42.05876422644605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x883b18a82cf0ba61%3A0x5d1110e490bec846!2sSprucewood+Shores+Estate+Winery%2C+Amherstburg%2C+ON!3m2!1d42.02276!2d-83.005223!4m5!1s0x883ac0dc3c604835%3A0x3c52721ace22d44d!2sDays+Inn+Leamington%2C+201+Erie+St+N%2C+Leamington%2C+ON+N8H+3A5!3m2!1d42.061199599999995!2d-82.5997573!5e0!3m2!1sen!2sca!4v1491766994029"
+            width="100%"
+            height="450"
+            frameborder="0"
+            style="border:0"
+            allowfullscreen></iframe>
+        </md-card-content>
+      </md-card>
+    </div>
+  </div>
+</md-content>
