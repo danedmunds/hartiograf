@@ -41,14 +41,14 @@
         $mdToast.show(
           $mdToast.simple()
             .textContent('Submitted!')
-            .position('end')
+            .parent(angular.element('#toastContainer'))
             .hideDelay(3000)
         );
       }, function errorCallback(response) {
         $mdToast.show(
           $mdToast.simple()
             .textContent('Submission failed :(')
-            .position('top left')
+            .parent(angular.element('#toastContainer'))
             .hideDelay(3000)
         );
       });

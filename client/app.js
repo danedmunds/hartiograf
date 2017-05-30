@@ -6,7 +6,7 @@ angular
     $mdThemingProvider, $locationProvider) {
 
     // $mdThemingProvider.theme('default')
-    //   .primaryPalette('teal');
+    //   .primaryPalette('deep-orange');
 
     // $locationProvider.html5Mode({enabled: true});
 
