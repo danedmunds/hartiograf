@@ -1,7 +1,7 @@
 version: "2"
 
 services:
-  streams-service:
+  hartiograf:
     image: danedmunds/hartiograf:latest
     restart: on-failure
     environment:
