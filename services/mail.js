@@ -1,9 +1,9 @@
-const nodemailer = require('nodemailer')
+var mailgun = require('mailgun-js')
 const _ = require('lodash')
 
 class MailService {
-  constructor (connectionString, fromEmail, toEmail) {
-    this.transporter = nodemailer.createTransport(connectionString)
+  constructor (mailgunConfig, fromEmail, toEmail) {
+    this.mailer = mailgun(mailgunConfig)
     this.fromEmail = fromEmail
     this.toEmail = toEmail
   }
@@ -33,7 +33,7 @@ class MailService {
       text: body
     }
 
-    this.transporter.sendMail(mailOptions, function(err, info){
+    this.mailer.messages().send(mailOptions, (err) => {
         if(err){
             console.log('Failed to send rsvp notification ' + err + ' ' + JSON.stringify(rsvp));
             return callback(err)

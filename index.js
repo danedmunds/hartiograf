@@ -11,7 +11,10 @@ const port = process.env.PORT
 mongoose.connect(process.env.CONNECTIONSTRING)
 
 let mailService = new MailService(
-  process.env.EMAIL_CONNECTION_STRING,
+  {
+    apiKey: process.env.MAILGUN_API_KEY,
+    domain: process.env.MAILGUN_DOMAIN
+  },
   process.env.EMAIL_FROM,
   process.env.EMAIL_TO)
 
