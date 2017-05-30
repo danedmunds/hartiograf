@@ -6,8 +6,11 @@
     .module('hartiografApp')
     .controller('rsvpController', rsvpController);
 
-  function rsvpController ($http, $rootScope, $mdToast) {
+  function rsvpController ($http, $scope, $rootScope, $mdToast) {
+    $scope.submitCaption = 'Submit';
+
     var vm = this;
+    vm.inTransit = false;
     vm.retrieveRsvp = retrieveRsvp;
     vm.submitRsvp = submitRsvp;
 
@@ -16,11 +19,6 @@
     retrieveRsvp();
 
     function retrieveRsvp () {
-      if (!$rootScope.id) {
-        // say something
-        return;
-      }
-
       $http.get('/api/v1/rsvps/' + $rootScope.id)
       .then(function successCallback(response) {
           vm.data = response.data;
@@ -31,10 +29,8 @@
     }
 
     function submitRsvp () {
-      if (!$rootScope.id) {
-        // say something
-        return;
-      }
+      vm.inTransit = true;
+      $scope.submitCaption = 'Sending...';
 
       $http.put('/api/v1/rsvps/' + $rootScope.id, vm.data)
       .then(function successCallback(response) {
@@ -44,6 +40,9 @@
             .parent(angular.element('#toastContainer'))
             .hideDelay(3000)
         );
+        vm.inTransit = false;
+        $scope.form.$setPristine();
+        $scope.submitCaption = 'Submit';
       }, function errorCallback(response) {
         $mdToast.show(
           $mdToast.simple()
@@ -51,6 +50,8 @@
             .parent(angular.element('#toastContainer'))
             .hideDelay(3000)
         );
+        vm.inTransit = false;
+        $scope.submitCaption = 'Submit';
       });
     }
   }
