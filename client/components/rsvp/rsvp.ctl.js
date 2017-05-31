@@ -16,15 +16,20 @@
 
     $rootScope.breadcrumb = 'RSVP';
 
-    retrieveRsvp();
+    if ($rootScope.id) {
+      retrieveRsvp();
+    }
 
     function retrieveRsvp () {
       $http.get('/api/v1/rsvps/' + $rootScope.id)
       .then(function successCallback(response) {
           vm.data = response.data;
         }, function errorCallback(response) {
-          // called asynchronously if an error occurs
-          // or server returns response with an error status.
+          $mdToast.show(
+            $mdToast.simple()
+              .textContent('Failed to load your RSVP, please try reloading. If issue persists please contact us!')
+              .hideDelay(10000)
+          );
       });
     }
 

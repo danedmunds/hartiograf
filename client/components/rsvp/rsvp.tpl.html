@@ -1,6 +1,31 @@
 <md-content>
-  <!-- Make sure rootScope.id is set -->
-  <form name='form' ng-submit="rsvp.submitRsvp()">
+  <md-card ng-hide="!!id">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">No RSVP</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+      You are not logged in. Please follow the link you received in your email.
+    </md-card-content>
+  </md-card>
+  <md-card ng-hide="!!rsvp.data || !id">
+    <md-card-title>
+      <md-card-title-text>
+        <div layout="row" layout-sm="column" layout-align="space-around">
+          <span class="md-headline">Loading your RSVP</span>
+        </div>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+      <div layout="row" layout-align="space-around">
+        <md-progress-circular
+          md-mode="indeterminate"
+          md-diameter="96"></md-progress-circular>
+      </div>
+    </md-card-content>
+  </md-card>
+  <form ng-hide="!rsvp.data || !id" name='form' ng-submit="rsvp.submitRsvp()">
     <div ng-repeat="guest in rsvp.data.guests">
       <md-card>
         <md-card-title>
