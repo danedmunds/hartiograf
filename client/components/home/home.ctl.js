@@ -9,6 +9,5 @@
   function homeController ($http, $rootScope) {
     delete $rootScope.breadcrumb;
     var vm = this;
-    vm.blah = 'blah';
   }
 })();

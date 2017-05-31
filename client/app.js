@@ -43,16 +43,11 @@ angular
       });
   })
   .run(function($cookies, $location, $rootScope) {
-    // http://localhost:8080/#!/home?token=2311&id=2312312
-    var token = $location.search().token || $cookies.get('token');
-    if (token) {
-      $cookies.put('token', token);
-      $rootScope.isAuthenticated = true;
-    }
-
+    // http://localhost:8080/#!/home?id=2311
     var id = $location.search().id || $cookies.get('id');
     if (id) {
       $cookies.put('id', id);
-      $rootScope.id = id
+      $rootScope.isAuthenticated = true;
+      $rootScope.id = id;
     }
   })
