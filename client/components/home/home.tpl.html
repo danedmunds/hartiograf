@@ -43,6 +43,19 @@
   					countdown: true
   				});
   			});
+
+        var scaleClock = function() {
+          var scale = $(window).width() / 820;
+          scale = scale > 1 ? 1 : scale;
+          $('.clock').css('zoom', scale);
+          $('.clock').css('-moz-transform', `scale(${scale})`);
+        }
+
+        scaleClock();
+
+        $(window).resize(function() {
+          scaleClock();
+        });
   		</script>
     </md-card-content>
   </md-card>
