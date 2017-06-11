@@ -1,9 +1,98 @@
 <md-content>
   <md-card>
+    <img src="assets/images/ribbon.png" class="md-card-image" alt="Taylor and Rachel">
+    <md-card-content layout="column">
+      <span flex class="md-headline" style="text-align: center">
+        Rachel Hart<br/>
+        &amp;<br/>
+        Taylor Graf
+      </span>
+      <span style="text-align: center; margin-top: 20px">
+        Request the pleasure of your company at their wedding on:<br/>
+        Friday, October 20th at 4:30pm
+      </span>
+      <span style="text-align: center; margin-top: 20px; margin-bottom: 20px">
+        <a
+          style="text-decoration:none; color:inherit"
+          target="_blank"
+          href="https://www.google.com/maps/place/Sprucewood+Shores+Estate+Winery/@42.02276,-83.005223,16z/data=!4m5!3m4!1s0x0:0x5d1110e490bec846!8m2!3d42.02276!4d-83.005223?hl=en-CA">
+          Sprucewood Shores Estate Winery<br/>
+          7258 County Road 50, RR#5,<br/>
+          Amherstburg, ON.
+        </a>
+      </span>
+    </md-card-content>
+  </md-card>
+  <md-card flex>
+    <md-card-content layout="column">
+      <div style="margin-top: 20px"></div>
+      <div class="clock" style="width: 700px; margin: 0 auto; zoom: 1; -moz-transform: scale(1)"></div>
+      <!-- <div class="clock" style="margin: 0 auto; zoom: 0.5; -moz-transform: scale(0.5)"></div> -->
+
+  		<script type="text/javascript">
+  			var clock;
+
+  			$(document).ready(function() {
+  				var now = new Date();
+  				var weddingDate  = new Date(2017, 10, 29, 16, 30);
+  				var diff = weddingDate.getTime() / 1000 - now.getTime() / 1000;
+
+  				// Instantiate a coutdown FlipClock
+  				clock = $('.clock').FlipClock(diff, {
+  					clockFace: 'DailyCounter',
+  					countdown: true
+  				});
+  			});
+  		</script>
+    </md-card-content>
+  </md-card>
+  <md-card flex>
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">Itinerary</span>
+      </md-card-title-text>
+    </md-card-title>
     <md-card-content>
-      <h1>Picture here</h1>
-      <h1>Rachel Hart and Taylor Graf<h1/>
-      <h1>October 20, 2017</h1>
+      <md-list flex>
+        <md-list-item class="md-2-line">
+          <!-- <img ng-src="{{todos[0].face}}?20" class="md-avatar" alt="{{todos[0].who}}" /> -->
+          <i class="md-avatar material-icons">favorite</i>
+          <div class="md-list-item-text">
+            <h3>4:15 PM</h3>
+            <p>Ceremony</p>
+          </div>
+        </md-list-item>
+        <md-divider ></md-divider>
+        <md-list-item class="md-2-line">
+          <!-- <img ng-src="{{todos[0].face}}?20" class="md-avatar" alt="{{todos[0].who}}" /> -->
+          <i class="md-avatar material-icons">local_bar</i>
+          <div class="md-list-item-text">
+            <h3>5:00 PM</h3>
+            <p>Cocktails and hors d'oeuvres</p>
+          </div>
+        </md-list-item>
+        <md-divider ></md-divider>
+        <md-list-item class="md-2-line">
+          <!-- <img ng-src="{{todos[0].face}}?20" class="md-avatar" alt="{{todos[0].who}}" /> -->
+          <!-- <i class="material-icons">people</i> -->
+          <i class="md-avatar material-icons">airline_seat_recline_normal</i>
+          <div class="md-list-item-text">
+            <h3>6:00 PM</h3>
+            <p>Reception</p>
+          </div>
+        </md-list-item>
+        <md-divider ></md-divider>
+        <md-list-item class="md-2-line">
+          <!-- <img ng-src="{{todos[0].face}}?20" class="md-avatar" alt="{{todos[0].who}}" /> -->
+          <i class="md-avatar material-icons">restaurant</i>
+          <div class="md-list-item-text">
+            <h3>6:30 PM</h3>
+            <p>Dinner</p>
+          </div>
+        </md-list-item>
+        <!-- <i class="material-icons">cake</i> -->
+        <!-- <i class="material-icons">star_border</i> -->
+      </md-list>
     </md-card-content>
   </md-card>
 </md-content>
