@@ -26,6 +26,26 @@
     </md-card-content>
   </md-card>
   <form ng-hide="!rsvp.data || !id" name='form' ng-submit="rsvp.submitRsvp()">
+    <md-card>
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">RSVP</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-content>
+        <p>
+          We look forward to seeing you October 20th, 2017.
+        </p>
+        <p>
+          In order to allow all guests, including parents, an evening of
+          relaxation we have chosen for our wedding day to be an adult only
+          occasion. We hope this advance notice means you are still able to
+          share our big day and will enjoy having the evening off!<br/>
+          <br/>
+          Nursing babies are excepted
+        </p>
+      </md-card-content>
+    </md-card>
     <div ng-repeat="guest in rsvp.data.guests">
       <md-card>
         <md-card-title>

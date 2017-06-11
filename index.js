@@ -22,15 +22,6 @@ let app = express()
 
 app.use(express.static('client'))
 app.use(cookieParser())
-app.use((req, res, next) => {
-  let token = req.query.token || req.cookies.token
-  if (!token) {
-    res.sendStatus(401)
-  }
-  req.token = token
-  res.cookie('token', token);
-  next()
-})
 
 let rsvpsRouter = new RsvpsRouter(mailService)
 rsvpsRouter.initRoutes()
