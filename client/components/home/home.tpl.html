@@ -7,11 +7,11 @@
         &amp;<br/>
         Taylor Graf
       </span>
-      <span style="text-align: center; margin-top: 20px">
+      <span style="text-align: center; margin-top: 40px">
         Request the pleasure of your company at their wedding on:<br/>
-        Friday, October 20th at 4:30pm
       </span>
-      <span style="text-align: center; margin-top: 20px; margin-bottom: 20px">
+      <p flex class="md-headline" style="text-align: center">Friday, October 20th at 4:30pm</p>
+      <span style="text-align: center; margin-top: 0px; margin-bottom: 20px">
         <a
           style="text-decoration:none; color:inherit"
           target="_blank"
@@ -34,7 +34,7 @@
 
   			$(document).ready(function() {
   				var now = new Date();
-  				var weddingDate  = new Date(2017, 10, 29, 16, 30);
+  				var weddingDate  = new Date(2017, 9, 29, 16, 30);
   				var diff = weddingDate.getTime() / 1000 - now.getTime() / 1000;
 
   				// Instantiate a coutdown FlipClock
@@ -62,13 +62,13 @@
   <md-card flex>
     <md-card-title>
       <md-card-title-text>
-        <span class="md-headline">Itinerary</span>
+        <span class="md-headline" style="text-align: center">Itinerary</span>
       </md-card-title-text>
     </md-card-title>
-    <md-card-content>
-      <md-list flex>
+    <md-card-content layout="row">
+      <div flex></div>
+      <md-list>
         <md-list-item class="md-2-line">
-          <!-- <img ng-src="{{todos[0].face}}?20" class="md-avatar" alt="{{todos[0].who}}" /> -->
           <i class="md-avatar material-icons">favorite</i>
           <div class="md-list-item-text">
             <h3>4:15 PM</h3>
@@ -77,7 +77,6 @@
         </md-list-item>
         <md-divider ></md-divider>
         <md-list-item class="md-2-line">
-          <!-- <img ng-src="{{todos[0].face}}?20" class="md-avatar" alt="{{todos[0].who}}" /> -->
           <i class="md-avatar material-icons">local_bar</i>
           <div class="md-list-item-text">
             <h3>5:00 PM</h3>
@@ -86,7 +85,6 @@
         </md-list-item>
         <md-divider ></md-divider>
         <md-list-item class="md-2-line">
-          <!-- <img ng-src="{{todos[0].face}}?20" class="md-avatar" alt="{{todos[0].who}}" /> -->
           <!-- <i class="material-icons">people</i> -->
           <i class="md-avatar material-icons">airline_seat_recline_normal</i>
           <div class="md-list-item-text">
@@ -96,7 +94,6 @@
         </md-list-item>
         <md-divider ></md-divider>
         <md-list-item class="md-2-line">
-          <!-- <img ng-src="{{todos[0].face}}?20" class="md-avatar" alt="{{todos[0].who}}" /> -->
           <i class="md-avatar material-icons">restaurant</i>
           <div class="md-list-item-text">
             <h3>6:30 PM</h3>
@@ -106,6 +103,7 @@
         <!-- <i class="material-icons">cake</i> -->
         <!-- <i class="material-icons">star_border</i> -->
       </md-list>
+      <div flex></div>
     </md-card-content>
   </md-card>
 </md-content>
