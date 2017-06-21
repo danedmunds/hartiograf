@@ -13,6 +13,8 @@ class Rsvp {
   createSchema() {
     let guestSchema = new mongoose.Schema({
       name: { type: String },
+      pos: { type: Number },
+      isPlusOne: { type: Boolean, default: false },
       coming: { type: Boolean, default: false },
       shuttle: { type: Boolean, default: false },
       diet: { type: String }
@@ -30,12 +32,15 @@ class Rsvp {
 
       let newGuestsMap = {}
       _.forEach(newValue.guests, (guest) => {
-        newGuestsMap[guest.name] = guest
+        newGuestsMap[guest.pos] = guest
       })
 
       _.forEach(this.guests, (guest) => {
-        let match = newGuestsMap[guest.name]
+        let match = newGuestsMap[guest.pos]
         if (match) {
+          if (guest.isPlusOne) {
+            guest.name = match.name
+          }
           guest.coming = match.coming
           guest.shuttle = match.shuttle
           guest.diet = match.diet

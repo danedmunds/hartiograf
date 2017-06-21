@@ -3,12 +3,12 @@
     {
       "name": "Dan Edmunds",
       "coming": true,
-      "shuttle": true
+      "shuttle": true,
+      "pos": 0
     },
     {
-      "name": "Amanda Edmunds",
-      "coming": false,
-      "diet": "I only eat the finest caviar"
+      "isPlusOne": true,
+      "pos": 1
     }
   ],
   "songs": [
@@ -20,17 +20,20 @@
 {
   "guests": [
     {
-      "name": "Sonya Jenkins"
+      "name": "Sonya Jenkins",
+      "pos": 0
     },
     {
-      "name": "Mark"
+      "name": "Mark",
+      "pos": 1
     }
   ]
 }
 {
   "guests": [
     {
-      "name": "Dan Trudeau"
+      "name": "Dan Trudeau",
+      "pos": 0
     }
   ]
 }

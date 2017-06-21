@@ -53,8 +53,17 @@
     <div ng-repeat="guest in rsvp.data.guests">
       <md-card>
         <md-card-title>
-          <md-card-title-text>
+          <md-card-title-text ng-if="!guest.isPlusOne">
             <span class="md-headline">{{guest.name}}</span>
+          </md-card-title-text>
+          <md-card-title-text ng-if="guest.isPlusOne">
+            <md-input-container
+              class="md-block"
+              style="margin-bottom: 0px; padding-bottom: 0px"
+              flex>
+            <label>Guest Name</label>
+              <input ng-model="guest.name">
+            </md-input-container>
           </md-card-title-text>
         </md-card-title>
         <md-card-content>
