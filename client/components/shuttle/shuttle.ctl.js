@@ -6,7 +6,8 @@
     .module('hartiografApp')
     .controller('shuttleController', shuttleController);
 
-  function shuttleController (visitService) {
+  function shuttleController ($rootScope, visitService) {
+    $rootScope.breadcrumb = 'Shuttle';
     visitService.visited('shuttle');
   }
 })();

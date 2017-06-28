@@ -6,7 +6,8 @@
     .module('hartiografApp')
     .controller('accommodationsController', accommodationsController);
 
-  function accommodationsController (visitService) {
+  function accommodationsController ($rootScope, visitService) {
+    $rootScope.breadcrumb = 'Accommodations';
     visitService.visited('accomodations');
   }
 })();

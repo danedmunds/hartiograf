@@ -6,7 +6,8 @@
     .module('hartiografApp')
     .controller('venueController', venueController);
 
-  function venueController (visitService) {
+  function venueController ($rootScope, visitService) {
+    $rootScope.breadcrumb = 'Venue';
     visitService.visited('venue');
   }
 })();

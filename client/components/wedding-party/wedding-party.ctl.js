@@ -6,7 +6,8 @@
     .module('hartiografApp')
     .controller('weddingPartyController', weddingPartyController);
 
-  function weddingPartyController (visitService) {
+  function weddingPartyController ($rootScope, visitService) {
+    $rootScope.breadcrumb = 'Wedding Party';
     visitService.visited('wedding-party');
   }
 })();
