@@ -6,7 +6,9 @@
     .module('hartiografApp')
     .controller('rsvpController', rsvpController);
 
-  function rsvpController ($http, $scope, $rootScope, $mdToast) {
+  function rsvpController ($http, $scope, $rootScope, $mdToast, visitService) {
+    visitService.visited('rsvp');
+
     $scope.submitCaption = 'Submit';
 
     var vm = this;

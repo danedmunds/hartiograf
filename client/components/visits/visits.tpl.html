@@ -1,0 +1,50 @@
+<md-content>
+  <md-card ng-hide="!!vm.data">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">Sign in</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+      <form name='form' ng-submit="vm.getAllVisits()">
+        <md-input-container class="md-block">
+          <label>Password</label>
+          <textarea ng-model="vm.password" md-maxlength="30" rows="1" md-select-on-focus></textarea>
+        </md-input-container>
+        <md-button
+        class="md-raised md-primary"
+        type="submit">Go!</md-button>
+      </form>
+    </md-card-content>
+  </md-card>
+  <md-card ng-if="vm.data">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">Page Visits</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+      <div layout="row">
+        <div flex></div>
+        <form name='refresh' ng-submit="vm.getAllVisits()">
+          <md-button
+          class="md-raised md-primary"
+          type="submit">Refresh</md-button>
+        </form>
+      </div>
+      <div ng-repeat="invite in vm.data">
+        {{invite.guests}}
+        <table style="margin-left: 30px; border: solid 1px; border-collapse: collapse;" ng-if="invite.visits.length > 0">
+          <tr style="border: solid 1px" ng-repeat="visit in invite.visits">
+            <td style="border: solid 1px">
+              {{visit.page}}
+            </td>
+            <td style="border: solid 1px">
+              {{visit.date.toLocaleString()}}
+            </td>
+          </tr>
+        </table>
+      </div>
+    </md-card-content>
+  </md-card>
+</md-content>

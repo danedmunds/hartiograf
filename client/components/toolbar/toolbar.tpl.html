@@ -53,8 +53,7 @@
             Wedding Party
           </md-button>
         </md-menu-item>
-        <md-menu-item
-          ng-if="isAuthenticated">
+        <md-menu-item>
           <md-button
             aria-label="RSVP"
             ui-sref="rsvp">
@@ -99,8 +98,7 @@
       <md-button
         ng-class="{'true':'md-primary md-hue-3','false':''}[breadcrumb === 'RSVP']"
         aria-label="RSVP"
-        ui-sref="rsvp"
-        ng-if="isAuthenticated">
+        ui-sref="rsvp">
         RSVP
       </md-button>
     </span>

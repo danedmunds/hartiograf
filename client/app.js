@@ -40,6 +40,10 @@ angular
         url: '/rsvp',
         templateUrl: 'components/rsvp/rsvp.tpl.html',
         controller: 'rsvpController as rsvp'
+      }).state('visits', {
+        url: '/visits',
+        templateUrl: 'components/visits/visits.tpl.html',
+        controller: 'visitsController as vm'
       });
   })
   .run(function($cookies, $location, $rootScope) {

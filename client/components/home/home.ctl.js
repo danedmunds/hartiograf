@@ -6,8 +6,7 @@
     .module('hartiografApp')
     .controller('homeController', homeController);
 
-  function homeController ($http, $rootScope) {
-    delete $rootScope.breadcrumb;
-    var vm = this;
+  function homeController (visitService) {
+    visitService.visited('home');
   }
 })();
