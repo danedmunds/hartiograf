@@ -33,14 +33,14 @@ class MailService {
       text: body
     }
 
-    // this.mailer.messages().send(mailOptions, (err) => {
-    //     if(err){
-    //         console.log('Failed to send rsvp notification ' + err + ' ' + JSON.stringify(rsvp));
-    //         return callback(err)
-    //     }
-    //     console.log('Rsvp notification sent for ' + names)
-    //     callback()
-    // })
+    this.mailer.messages().send(mailOptions, (err) => {
+        if(err){
+            console.log('Failed to send rsvp notification ' + err + ' ' + JSON.stringify(rsvp));
+            return callback(err)
+        }
+        console.log('Rsvp notification sent for ' + names)
+        callback()
+    })
   }
 }
 
